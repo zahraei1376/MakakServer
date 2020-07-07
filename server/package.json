@@ -1,0 +1,33 @@
+{
+  "name": "makak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Login.js",
+  "scripts": {
+    "test": "nodemon --exec \"mocha\"",
+    "start": "nodemon index.js",
+    "start-server": "node index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chai": "^4.2.0",
+    "connect-mongodb-session": "^2.2.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-admin": "^1.4.2",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.2.0",
+    "formidable": "^1.2.1",
+    "gridfs-stream": "^1.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^6.2.0",
+    "mongodb": "^3.3.2",
+    "mongoose": "^5.7.1",
+    "multer": "^1.4.2",
+    "nodemon": "^1.19.2",
+    "pdfkit": "^0.10.0",
+    "session-file-store": "^1.3.1"
+  },
+  "author": "Zahra Alipour",
+  "license": "ISC"
+}
