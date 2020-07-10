@@ -513,7 +513,9 @@ module.exports=class UserController{
             }
             const token= jwt.sign({
                 email:loadedUser.email,
-                userId:loadedUser._id.toString()
+                userId:loadedUser._id.toString(),
+                isTeacher:loadedUser.isTeacher,
+                isAdmin:loadedUser.isAdmin
             },
             'MySuperSecret',
             {expiresIn:'1h'}
