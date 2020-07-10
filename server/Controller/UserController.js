@@ -490,9 +490,10 @@ module.exports=class UserController{
         // }
     }
     // /////////////////////////////////////////////////////////////
-    login(req,res){
+    login(req,res,next){
         let username=req.body.username;
         let password=req.body.password;
+        console.log(username , password);
         let loadedUser;
         Users.findOne({username:username})
         .then((userlogin)=>{
@@ -512,12 +513,13 @@ module.exports=class UserController{
             }
             const token= jwt.sign({
                 email:loadedUser.email,
-                userId:loadedUser._id.tostring()
+                userId:loadedUser._id.toString()
             },
             'MySuperSecret',
             {expiresIn:'1h'}
             );
-            res.statusCode(200).json({token:token,userId:loadedUser._id.tostring()})
+            // res.statusCode(200).json({token:token,userId:loadedUser._id.toString()})
+            res.json({token:token,userId:loadedUser._id.toString()})
         })
         .catch(err=>{
             if(!err.statusCode){
